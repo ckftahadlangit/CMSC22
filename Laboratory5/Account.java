@@ -12,7 +12,6 @@ public class Account{
 		double balance = 0.0;
 	}
 	
-
 	public Account(int accountNumber, double balance){
 		this.accountNumber = accountNumber;
 		this.balance = balance;
