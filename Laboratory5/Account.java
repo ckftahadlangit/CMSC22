@@ -1,8 +1,6 @@
 /*
 created by: cftahadlangit on 9/20/16
 */
-
-
 public class Account{
 	private int accountNumber;
 	private double balance;
@@ -47,6 +45,6 @@ public class Account{
 	}
 
 	public String toString(){
-		return String.format("A/C no:%03d Balance=%.3f", this.accountNumber, this.balance);
+		return String.format("A/C no:%03d Balance=%.2f", this.accountNumber, this.balance);
 	}
 }
