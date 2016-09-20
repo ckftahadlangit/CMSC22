@@ -17,6 +17,10 @@ public class AccountTester{
 		System.out.println(acc2);
 		System.out.println(acc3);
 
+		System.out.println(acc.getAccountNumber());
+		System.out.println(acc.getBalance());
+
+
 		acc.setBalance(456.7);
 		acc.credit(1000000);
 		acc.debit(100);
