@@ -7,9 +7,11 @@ public class Account{
 	private int accountNumber;
 	private double balance;
 
-	public Account{
-	private int accountNumber;
-	private double balance = 0.0;
+	public Account(){
+		int accountNumber = 0;
+		double balance = 0.0;
+	}
+	
 
 	public Account(int accountNumber, double balance){
 		this.accountNumber = accountNumber;
@@ -25,7 +27,11 @@ public class Account{
 		return this.accountNumber;
 	}
 
-	public int getBalance(){
+	public double getBalance(){
+		return this.balance;
+	}
+
+	public double setBalance(double balance){
 		return this.balance;
 	}
 
@@ -42,7 +48,6 @@ public class Account{
 	}
 
 	public String toString(){
-		String info = ("A/C no:%03d, Balance=%.3f", accountNumber, balance);
-			return info;
+		return String.format("A/C no:%03d Balance=%.3f", this.accountNumber, this.balance);
 	}
 }
