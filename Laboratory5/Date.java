@@ -47,11 +47,10 @@ public class Date{
 
 	public void setDay(int day){
 		if(this.month == 2){
-			if((isLeapYear(year) == 1) && (day < 1 && day > 29)){
-				throw new IllegalArgumentException("There is no date beyond 29 in February!");
-			}else if((isLeapYear != 1) && (day < 1 && day > 28)){
-				throw new IllegalArgumentException("This year is not a leap year!");
-			}
+			 if((isLeapYear(year) == true) && (day < 1 && day > 29)){
+          			throw new IllegalArgumentException("There is no date beyond 29 in February!");
+        		}else if((isLeapYear(year) == false) && (day < 1 && day > 28)){
+           			throw new IllegalArgumentException("This year is not a leap year!");
 		}else if(this.month == 4 || this.month == 6 || this.month == 9 || this.month == 11){
 			if(day < 1 && day > 30){
 				throw new IllegalArgumentException("There is no date beyond 30 in this month!");
