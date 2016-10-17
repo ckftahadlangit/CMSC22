@@ -53,11 +53,11 @@ public class Date{
            			throw new IllegalArgumentException("This year is not a leap year!");
 			}
 		}else if(this.month == 4 || this.month == 6 || this.month == 9 || this.month == 11){
-			if(day < 1 && day > 30){
+			if(day < 1 || day > 30){
 				throw new IllegalArgumentException("There is no date beyond 30 in this month!");
 			}
 		}else if(this.month == 1 || this.month == 3 || this.month == 5 || this.month == 7 || this.month == 8 || this.month == 10 ||this.month == 12){
-			if(day < 1 && day > 31){
+			if(day < 1 || day > 31){
 				throw new IllegalArgumentException("There is no date beyond 31 in this month!");
 			}
 		}
