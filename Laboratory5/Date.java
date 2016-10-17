@@ -51,6 +51,7 @@ public class Date{
           			throw new IllegalArgumentException("There is no date beyond 29 in February!");
         		}else if((isLeapYear(year) == false) && (day < 1 && day > 28)){
            			throw new IllegalArgumentException("This year is not a leap year!");
+			}
 		}else if(this.month == 4 || this.month == 6 || this.month == 9 || this.month == 11){
 			if(day < 1 && day > 30){
 				throw new IllegalArgumentException("There is no date beyond 30 in this month!");
