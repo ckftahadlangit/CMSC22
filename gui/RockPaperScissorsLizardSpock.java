@@ -34,8 +34,7 @@ public class RockPaperScissorsLizardSpock extends Frame {
         //layout
         setLayout(new FlowLayout());
 
-        lblYourChoice = new Label("Your Choice:");
-
+        lblYourChoice = new Label("Your Choice:"); 
         resultDesc = new TextArea("Result: ");
         resultDesc.setEditable(false);
         Label ps = new Label("Player's Score");
@@ -51,11 +50,9 @@ public class RockPaperScissorsLizardSpock extends Frame {
         dLabel = new Label("");
         dButton = new Button("Replay");
         dButton.setSize(100,200);
-
         dialog.setSize(250,100);
         dialog.add(dLabel);
         dialog.add(dButton);
-
 
         //reset the game
         dButton.addActionListener(new ActionListener() {
@@ -70,14 +67,14 @@ public class RockPaperScissorsLizardSpock extends Frame {
             }
         });
 
-        //close dialog
+        //close dialog frame
         dialog.addWindowListener(new WindowAdapter() {
             public void windowClosing (WindowEvent we){
                 System.exit(0);
             }
         });
 
-        //anonymous class?
+        //anonymous class
         launch.addActionListener((new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -88,7 +85,7 @@ public class RockPaperScissorsLizardSpock extends Frame {
             }
         }));
 
-        //add them to container
+        //add them to the container
         add(lblYourChoice);
         add(rock);
         add(paper);
@@ -113,10 +110,10 @@ public class RockPaperScissorsLizardSpock extends Frame {
     }
 
     public void checkbox() {
-        String[] op = new String[]{"ROCK", "PAPER", "SCISSORS", "LIZARD", "SPOCK"};
-        Random rand = new Random();
-        String random = op[rand.nextInt(op.length)];
-        // 1 if winner
+        String[] op = new String[]{"ROCK", "PAPER", "SCISSORS", "LIZARD", "SPOCK"}; //String array of all the possible options
+        Random rand = new Random(); //instantiate rand
+        String random = op[rand.nextInt(op.length)]; //randomly select from the string array
+        // 1 if winner , 0 if draw, -1 if loser
         if(options.getSelectedCheckbox() == rock){
             if(random == "SCISSORS" || random == "LIZARD"){
                 result = 1;
@@ -158,6 +155,7 @@ public class RockPaperScissorsLizardSpock extends Frame {
                 result = -1;
             }
         }
+        //if the player wins, his score will increase  while nothing happens to the score of the computer
         if (result == 1) {
             pScore++;
             resultDesc.setText("Result:" + "\n");
@@ -166,6 +164,7 @@ public class RockPaperScissorsLizardSpock extends Frame {
             resultDesc.append("YOU WON THIS ROUND.");
             playerScore.setText(pScore + "");
         }
+        //if the player loses, the computer gets the score 
         if (result == -1) {
             cScore++;
             resultDesc.setText("Result:" + "\n");
@@ -174,6 +173,7 @@ public class RockPaperScissorsLizardSpock extends Frame {
             resultDesc.append("COMPUTER WON THIS ROUND.");
             computerScore.setText(cScore + "");
         }
+        //if the player and the computer selected the same option neither of their scores will increase
         if (result == 0) {
             resultDesc.setText("Result:" + "\n");
             resultDesc.append("Player chose " + options.getSelectedCheckbox().getLabel() + "\n");
@@ -183,7 +183,7 @@ public class RockPaperScissorsLizardSpock extends Frame {
     }
 
     public void gameOver(){
-        if(pScore == 5 && cScore < 5){
+        if(pScore == 5 && cScore < 5){ //checks if either of the player and computer reached 5 pts
             dLabel.setText("Congratulations Player won!");
         }else{
             dLabel.setText("Computer won!");
