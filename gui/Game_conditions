@@ -1,0 +1,10 @@
+Rock beats scissors and Lizard
+Paper beats Rock and Spock
+Scissors beats paper and lizard
+Lizard beats Paper and Spock
+Spock beats Rock and Scissors
+
+
+As shown above, Rock defeats Lizard and Scissors; Lizard defeats Hand and Spock; and so on.
+Our player will be fighting against a computer AI that will generate random choices for each turn.
+For every game, a point is added to whoever gets the winning hand. First player to get 5 points wins the game.
