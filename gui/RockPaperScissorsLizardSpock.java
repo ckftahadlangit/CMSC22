@@ -48,7 +48,7 @@ public class RockPaperScissorsLizardSpock extends Frame {
         dialog = new Dialog(this,"Game Over!",Dialog.ModalityType.DOCUMENT_MODAL);
         dialog.setLayout(new FlowLayout());
         dLabel = new Label("");
-        dButton = new Button("Okay");
+        dButton = new Button("OK");
         dButton.setSize(100,200);
         dialog.setSize(250,100);
         dialog.add(dLabel);
