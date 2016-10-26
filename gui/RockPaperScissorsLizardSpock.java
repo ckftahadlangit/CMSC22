@@ -34,7 +34,7 @@ public class RockPaperScissorsLizardSpock extends Frame {
         //layout
         setLayout(new FlowLayout());
 
-        lblYourChoice = new Label("Your Choice:"); 
+        lblYourChoice = new Label("Your Choice:");
         resultDesc = new TextArea("Result: ");
         resultDesc.setEditable(false);
         Label ps = new Label("Player's Score");
@@ -114,42 +114,42 @@ public class RockPaperScissorsLizardSpock extends Frame {
         Random rand = new Random(); //instantiate rand
         String random = op[rand.nextInt(op.length)]; //randomly select from the string array
         // 1 if winner , 0 if draw, -1 if loser
-        if(options.getSelectedCheckbox() == rock){
-            if(random == "SCISSORS" || random == "LIZARD"){
+        if(options.getSelectedCheckbox().equals(rock)){
+            if(random.equals("SCISSORS") || random.equals("LIZARD")){
                 result = 1;
-            }else if(random == "ROCK"){
+            }else if(random.equals("ROCK")){
                 result = 0;
             }else{
                 result = -1;
             }
-        }else if(options.getSelectedCheckbox() == paper){
-            if(random == "ROCK" || random == "SPOCK"){
+        }else if(options.getSelectedCheckbox().equals(paper)){
+            if(random.equals("ROCK")|| random.equals("SPOCK")){
                 result = 1;
-            }else if(random == "PAPER"){
+            }else if(random.equals("PAPER")){
                 result = 0;
             }else{
                 result = -1;
             }
-        }else if(options.getSelectedCheckbox() == scissors){
-            if(random == "PAPER" || random == "LIZARD"){
+        }else if(options.getSelectedCheckbox().equals(scissors)){
+            if(random.equals("PAPER") || random.equals("LIZARD")){
                 result = 1;
-            }else if(random == "SCISSORS"){
+            }else if(random.equals("SCISSORS")){
                 result = 0;
             }else{
                 result = -1;
             }
-        }else if(options.getSelectedCheckbox() == lizard){
-            if(random == "PAPER" || random == "SPOCK"){
+        }else if(options.getSelectedCheckbox().equals(lizard)){
+            if(random.equals("PAPER") || random.equals("SPOCK")){
                 result = 1;
-            }else if(random == "LIZARD"){
+            }else if(random.equals("LIZARD")){
                 result = 0;
             }else{
                 result = -1;
             }
-        }else if(options.getSelectedCheckbox() == spock){
-            if(random == "ROCK" || random == "SCISSOR"){
+        }else if(options.getSelectedCheckbox().equals(spock)){
+            if(random.equals("ROCK") || random.equals("SCISSOR")){
                 result = 1;
-            }else if(random == "SPOCK"){
+            }else if(random.equals("SPOCK")){
                 result = 0;
             }else{
                 result = -1;
@@ -164,7 +164,7 @@ public class RockPaperScissorsLizardSpock extends Frame {
             resultDesc.append("YOU WON THIS ROUND.");
             playerScore.setText(pScore + "");
         }
-        //if the player loses, the computer gets the score 
+        //if the player loses, the computer gets the score
         if (result == -1) {
             cScore++;
             resultDesc.setText("Result:" + "\n");
@@ -192,6 +192,6 @@ public class RockPaperScissorsLizardSpock extends Frame {
     }
 
     public static void main(String args[]){
-       new RockPaperScissorsLizardSpock();
+        new RockPaperScissorsLizardSpock();
     }
 }
