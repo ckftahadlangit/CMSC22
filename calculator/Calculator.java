@@ -26,7 +26,6 @@ public class Calculator  extends JFrame{
         result = "";
 
         output = new JTextArea();
-        //output.setText("0");
         output.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
         output.setBackground(Color.LIGHT_GRAY);
         output.setForeground(Color.BLACK);
@@ -79,7 +78,6 @@ public class Calculator  extends JFrame{
             }
         });
 
-
         pane.add(btnAC);
         pane.add(btnPM);
         pane.add(btnPerc);
@@ -112,7 +110,7 @@ public class Calculator  extends JFrame{
         setVisible(true);
         setResizable(false);
 
-
+        //AC = AllClear or clear all
         btnAC.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -144,59 +142,72 @@ public class Calculator  extends JFrame{
             }
         });
 
-        btnDiv.addActionListener(new ActionListener() {
+        btnSub.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 first = new BigDecimal(output.getText());
                 output.setText("");
-                operation = "/";
+                operation = "-";
+            }
+        });
+
+        btnMul.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                first = new BigDecimal(output.getText());
+                output.setText("");
+                operation = "x";
+            }
+        });
+
+        btnAdd.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                first = new BigDecimal(output.getText());
+                output.setText("");
+                operation = "+";
             }
         });
     }
 
-
     public void events(ActionEvent e) {
         //JButton src = (JButton) e.getSource();
-        if(e.getSource().equals(btn0)){
-            output.setText(null);
-        }
-        if(e.getSource().equals(btn0))
+        if (e.getSource().equals(btn0)) {
             output.setText(output.getText().concat("0"));
-        if(e.getSource().equals(btn1))
+        }
+        if (e.getSource().equals(btn1)) {
             output.setText(output.getText().concat("1"));
-
-        if(e.getSource().equals(btn2))
+        }
+        if (e.getSource().equals(btn2)){
             output.setText(output.getText().concat("2"));
-
-        if(e.getSource().equals(btn3))
+        }
+        if(e.getSource().equals(btn3)) {
             output.setText(output.getText().concat("3"));
-
-        if(e.getSource().equals(btn4))
+        }
+        if(e.getSource().equals(btn4)) {
             output.setText(output.getText().concat("4"));
-
-        if(e.getSource().equals(btn5))
+        }
+        if(e.getSource().equals(btn5)) {
             output.setText(output.getText().concat("5"));
-
-        if(e.getSource().equals(btn6))
+        }
+        if(e.getSource().equals(btn6)) {
             output.setText(output.getText().concat("6"));
-
-        if(e.getSource().equals(btn7))
+        }
+        if(e.getSource().equals(btn7)) {
             output.setText(output.getText().concat("7"));
-
-        if(e.getSource().equals(btn8))
+        }
+        if(e.getSource().equals(btn8)) {
             output.setText(output.getText().concat("8"));
-
-        if(e.getSource().equals(btn9))
+        }
+        if(e.getSource().equals(btn9)) {
             output.setText(output.getText().concat("9"));
-
-        if(e.getSource().equals(btnDec))
+        }
+        if(e.getSource().equals(btnDec)) {
             output.setText(output.getText().concat("."));
-
-//        char remove;
-//        if(e.getSource().equals(btnC))
-//            remove = result.charAt(-1);
-//            remove = null;
-
+        }
+        if(e.getSource().equals(btnC)){
+            output.remove(result.charAt(-1));
+        }
     }
 
 
