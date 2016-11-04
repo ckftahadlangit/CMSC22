@@ -30,6 +30,14 @@ public class Course implements Serializable{
         this.courseCode = courseCode;
     }
 
+    @Override
+    public String toString() {
+        return "Course{" +
+                "courseCode='" + courseCode + '\'' +
+                ", courseDescription='" + courseDescription + '\'' +
+                '}';
+    }
+
     public void setCourseDescription(String courseDescription) {
         this.courseDescription = courseDescription;
     }
